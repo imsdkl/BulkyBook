@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-6">
                 <div class="form-floating mb-3">
-                    <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="form-control" placeholder="CategoryId">
+                    <select asp-for="CategoryId" asp-items="@(ViewData["CategoryList"] as IEnumerable<SelectListItem>)" class="form-control" placeholder="CategoryId">
                         <option disabled selected>Select Category</option>
                     </select>
                     <label asp-for="CategoryId" class="form-label"></label>
