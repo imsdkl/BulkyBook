@@ -7,14 +7,15 @@
             <h2 class="text-primary">Delete Category</h2>
             <hr />
         </div>
-        <div class="mb-3 row p-1">
-            <label asp-for="Name" class="p-0"></label>
-            <input asp-for="Name" disabled class="form-control" />
+        <div class="form-floating mb-3">
+            <input asp-for="Name" class="form-control" placeholder="Name" disabled/>
+            <label asp-for="Name" class="form-label"></label>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
-        <div class="mb-3 row p-1">
-            <label asp-for="DisplayOrder" class="p-0"></label>
-            <input asp-for="DisplayOrder" disabled class="form-control" />
-
+        <div class="form-floating mb-3">
+            <input asp-for="DisplayOrder" class="form-control" placeholder="DisplayOrder" disabled/>
+            <label asp-for="DisplayOrder" class="form-label"></label>
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
         </div>
 
         <div class="row">
