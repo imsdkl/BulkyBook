@@ -1,6 +1,6 @@
 ﻿@model ProductVM
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary">Create Product</h2>
@@ -30,13 +30,13 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-floating mb-3">
-                    <select asp-for="@Model.Product.CategoryId" asp-items="@Model.CategoryList" class="form-control" placeholder="CategoryId">
-                        <option disabled selected>Select Category</option>
+                <div class="input-group mb-3">
+                    <label asp-for="Product.CategoryId" class="input-group-text">Category</label>
+                    <select asp-for="@Model.Product.CategoryId" asp-items="@Model.CategoryList" class="form-select" placeholder="CategoryId">
+                        <option disabled selected>Choose...</option>
                     </select>
-                    <label asp-for="Product.CategoryId" class="form-label"></label>
-                    <span asp-validation-for="Product.Price100" class="text-danger"></span>
                 </div>
+                <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
             </div>
         </div>
         <div class="form-floating mb-3">
@@ -74,7 +74,11 @@
                 </div>
             </div>
         </div>
-
+        <div class="input-group mb-3">
+            <input type="file" asp-for="Product.ImageUrl" class="form-control" placeholder="ImageUrl" />
+            <label asp-for="Product.ImageUrl" class="input-group-text"></label>
+            <span asp-validation-for="Product.ImageUrl" class="text-danger"></span>
+        </div>
 
         <div class="row">
             <div class="col-6 col-md-3">
